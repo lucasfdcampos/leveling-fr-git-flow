@@ -3,7 +3,9 @@ echo "Welcome to the survey!"
 
 while true; do
   read -p "Enter your name: " name
-  if [ ${#name} -ge 2 ]; then
+  if [ -z "$name" ]; then
+    echo "Name cannot be empty."
+  elif [ ${#name} -ge 2 ]; then
     break
   else
     echo "The name must be at least 2 characters."
