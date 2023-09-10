@@ -5,6 +5,8 @@ while true; do
   read -p "Enter your name: " name
   if [ -z "$name" ]; then
     echo "Name cannot be empty."
+  elif [[ ! "$name" =~ ^[a-zA-Z]+$ ]]; then
+    echo "Name must contain only alphabetic characters."
   elif [ ${#name} -ge 2 ]; then
     break
   else
